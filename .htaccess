@@ -1,0 +1,18 @@
+
+RewriteEngine on
+
+
+# SiteGuarding Firewall Block
+<Files ".user.ini">
+<IfModule mod_authz_core.c>
+	Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+	Order deny,allow
+	Deny from all
+</IfModule>
+</Files>
+
+# END SiteGuarding Firewall Block
+Deny from 107.77.249.53
+Deny from 184.166.10.120

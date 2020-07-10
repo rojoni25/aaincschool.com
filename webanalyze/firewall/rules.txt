@@ -1,0 +1,476 @@
+::ALLOW_ALL_IP::
+# Any actions will be allowed from these IP addresses
+# Samples:
+# 100.50.60.70
+# 100.50.60.*
+# 100.50.*.*
+185.72.157.169
+185.72.157.170
+185.72.157.171
+185.72.157.172
+
+::BLOCK_ALL_IP::
+# Any actions will be blocked from these IP addresses
+# Samples:
+# 100.50.60.70
+# 100.50.60.*
+# 100.50.*.*
+
+
+::ALERT_IP::
+# Any actions will be allowed from these IP addresses, but admin will get notification by email
+# Samples:
+# 100.50.60.70
+# 100.50.60.*
+# 100.50.*.*
+
+
+::BLOCK_RULES_IP::
+# For these IP addresses will be special rules (see section BLOCK_RULES)
+# Samples:
+# 100.50.60.70
+# 100.50.60.*
+# 100.50.*.*
+
+
+::BLOCK_RULES::
+# Firewall rules for selected IP addresses (see section BLOCK_RULES_IP)
+# Samples:
+# allow|file|/phpinfo.php			- allow to execute phpinfo.php
+# block|file|/phpinfo.php			- block to execute phpinfo.php
+# allow|folder|/images/				- allow to execute any php files ONLY in folder /images/ (note /images/banner/ is not included)
+# block|folder|/images/				- block to execute any php files ONLY in folder /images/ (note /images/banner/ is not included and can be executed)
+# allow|any|/images/*				- allow to execute any php files in folder /images/ and all folders inside
+# block|folder|/images/*			- block to execute any php files in folder /images/ and all folders inside
+
+
+::RULES::
+# Firewall rules for all IP addresses allow/block access to the files
+# Samples:
+# allow|file|/phpinfo.php			- allow to execute phpinfo.php
+# block|file|/phpinfo.php			- block to execute phpinfo.php
+# allow|folder|/images/				- allow to execute any php files ONLY in folder /images/ (note /images/banner/ is not included)
+# block|folder|/images/				- block to execute any php files ONLY in folder /images/ (note /images/banner/ is not included and can be executed)
+# allow|any|/images/*				- allow to execute any php files in folder /images/ and all folders inside
+# block|folder|/images/*			- block to execute any php files in folder /images/ and all folders inside
+#block|file|/wp-login.php
+# Joomla
+block|any|/administrator/*
+allow|file|/administrator/index.php
+allow|file|/administrator/components/com_joomlaupdate/restore.php
+#block|any|/components/*
+block|any|/includes/*
+block|any|/language/*
+block|any|/libraries/*
+block|any|/media/*
+block|any|/modules/*
+block|any|/plugins/*
+block|any|/templates/*
+block|any|/xmlrpc/*
+# WordPress
+block|any|/wp-includes/*
+allow|file|/wp-includes/ms-files.php
+block|any|/wp-content/uploads/*
+#block|any|/wp-content/themes/*
+#block|any|/wp-content/*
+allow|any|/wp-content/plugins/*
+block|any|/wp-admin/css/*
+block|any|/wp-admin/images/*
+block|any|/wp-admin/includes/*
+block|any|/wp-admin/js/*
+# Strict rules
+#block|any|/*
+#allow|any|/webanalyze/*
+#allow|file|/index.php
+#allow|file|/administrator/index.php
+#allow|file|/wp-admin/*
+#allow|file|/wp-login.php
+#allow|file|/wp-signup.php
+#allow|file|/wp-login.php
+#allow|file|/xmlrpc.php
+#allow|file|/wp-cron.php
+#allow|file|/wp-comments-post.php
+# Common
+allow|file|/webanalyze/tunnel2.php
+block|any|/tmp/*
+block|any|/cache/*
+block|any|/cgi-bin/*
+block|any|/images/*
+block|any|/css/*
+block|any|/js/*
+block|any|/logs/*
+block|any|/log/*
+block|any|/downloader/*
+block|any|/var/*
+block|file|/get.php
+block|any|/wp-content/plugins/revslider/temp/update_extract/*
+allow|file|/modules/paypal/express_checkout/ajax.php
+allow|file|/modules/paypal/express_checkout/payment.php
+allow|file|/wp-includes/js/tinymce/wp-tinymce.php
+allow|file|/media/plg_jchoptimize/assets/jscss.php
+
+
+
+
+
+::BLOCK_URLS::
+# Analyze the link ($_SERVER['REQUEST_URI']) and blocks
+# Samples:
+# /xxx/                             - blocks exactly this link
+# /xxx*                             - blocks the link started with /xxx
+# *xxx*                             - blocks the link with the word xxx
+# *xxx                              - blocks the link ends with xxx
+# url|bot_name                      - by default * any bot
+# /xxx*|Googlebot
+
+
+
+::ALLOW_REQUESTS::
+# Analyze all data in $_REQUEST and allows executing
+# Samples:
+# field_name|field_value
+# field_name|=field_value           - use = to search exact field_value 
+# p1|*								- any requests with field name p1 will be allowed
+# *|base64_decode					- any requests with field value (contains the word base64_decode) will be allowed
+page|=pmxe-admin-export
+
+
+::ALERT_REQUESTS::
+# Analyze all data in $_REQUEST and send alert to SG (it doesnt block request)
+# Samples:
+# field_name|field_value
+# field_name|=field_value           - use = to search exact field_value 
+# p1|*								- any requests with field name p1 will be alerted
+# *|base64_decode					- any requests with field value (contains the word base64_decode) will be alerted
+*|0x1999
+*|to6ik
+*|indoxploit
+*|wpupdatestream
+log|wp.
+
+
+::BOTS_RULES::
+# Checks HTTP_USER_AGENT and blocks or allows connection, set SITEGUARDING_FILTER_BOTS true to activate it
+# Samples:
+# allow(block)|Googlebot   
+# block|bot
+
+
+::BLOCK_REQUESTS::
+# Analyze all data in $_REQUEST and blocks executing
+# Samples:
+# field_name|field_value
+# field_name|=field_value           - use = to search exact field_value 
+# p1|*								- any requests with field name p1 will be blocked
+# *|base64_decode					- any requests with field value (contains the word base64_decode) will be blocked
+p1|*
+*|base64_decode
+*|str_rot13
+*|<?php
+*|eval(
+*|get_file_contents
+*|FilesMan
+*|edoced_46esab
+*|move_uploaded_file
+*|extract($_COOKIE)
+log|wpupdatestream
+log|wp.service.
+execute|wp_insert_user
+log|wp.
+log|0x1999
+username|joomla.
+*|ExtractValue
+action|revslider_ajax_action
+bot|die(
+email|@qq.com
+email|@163.com
+email|@139.com
+email|@126.com
+text|www.111
+text|www.222
+text|www.333
+text|www.444
+text|www.555
+text|www.666
+text|www.777
+text|www.888
+text|www.999
+contact_email|@qq.com
+contact_email|@163.com
+contact_email|@139.com
+contact_email|@126.com
+contact_message|www.111
+contact_message|www.222
+contact_message|www.333
+contact_message|www.444
+contact_message|www.555
+contact_message|www.666
+contact_message|www.777
+contact_message|www.888
+contact_message|www.999
+*|die(pi()
+*|die(md5(
+*|print(md5(111
+*|indoxploit
+*|to6ik
+qqfile|/../
+*|../../../
+plugin|fileupload
+*|wget -O
+*|/pastebin.com/
+do|=zoneh
+*|BadboY 
+*|G123G 
+*|ZeroOneZer0 
+*|XxPsychoxX 
+*|Mr.Rabb1t 
+*|NET00it
+*|Sh4rkNeck
+do|=jumping
+do|=auto_edit_user
+*|Fuck You
+*|S1ZU4IRI-X
+*|Mr.H3LL_NET
+*|Mrs.LeV14ThaN
+pwd|rachid116
+dd|echo(
+action|wpgdprc_process_action
+*|\x73\x63\x72\x69\x70\x74
+action|mk_file_folder_manager
+action|td_ajax_update_panel
+swp_debug|load_options
+swpsmtp_import_settings_file|*
+action|miglaA_update_me
+name_options|yuzo_related_post
+yp_remote_get|*
+yp_json_import_data|*
+wplc_custom_js|*
+action|update_zb_fbc_code
+
+::BLOCK_IP_REQUESTS::
+# Adds IP to block list if these words are detected
+md5(
+$_FILES
+tmp_name
+#upload
+com_adsmanager
+../../../
+#com_jce
+pastebin.com
+com_jdownloads
+\x73\x63\x72\
+die(
+
+::GEO_FILES::
+# Allows or Blocks access to the files of folders from specific countries
+# set SITEGUARDING_GEO_CONTROL = true
+# Samples:
+# block(allow)|file(any)|/wp-login.php|RU,UA,(separated by ,)
+# block|file|/wp-login.php|RU           - Block RU, other countries are allowed
+# allow|file|/wp-login.php|US           - Allow US only, block other
+
+
+::GEO_REDIRECT::
+# Redirects visitors from specific countries to another URL
+# set SITEGUARDING_GEO_CONTROL = true & SITEGUARDING_GEO_REDIRECT = true
+# Samples:
+# US,RU,UA|https://www.google.com (separated by ,)
+
+
+
+::FILES_REQUESTS::
+# Analyze all data in $_REQUEST for specific file and blocks executing
+# Samples:
+# allow/block|file|field_name|(=)field_value         - use = to search exact field_value 
+# block|/administrator/index.php|username|*
+# allow|/administrator/index.php|username|=siteguarding
+# block|/wp-login.php|log|*
+# allow|/wp-login.php|log|=siteguarding
+
+
+::REWRITE_REQUESTS::
+# Changes value in $_REQUEST 
+# Samples:
+#{"jform":{"contact_email_copy":"UNSET"}}      - if array [jform][contact_email_copy] exists it will set value 0 , value UNSET will do unset()
+{"jform":{"contact_email_copy":"UNSET"}}
+
+
+
+::TRACK_IP::
+# If SITEGUARDING_TRACK_IP is true, will analyze IP addresses to specific URLs to avoid DDoS or limit requests from the same IP
+# Banned IP addresses will be added to rules file.
+# Samples:
+# /xxx/                             - blocks exactly this link
+# /xxx*                             - blocks the link started with /xxx
+# *xxx*                             - blocks the link with the word xxx
+# *xxx                              - blocks the link ends with xxx
+
+
+
+::ANTIBOT::
+# If SITEGUARDING_ACTIVE_ANTIBOT is true, will block all bots except allowed in this list
+# Samples:
+# Googlebot|googlebot.com,google.com
+# AnyBotName|.
+yandex.com|yandex.ru,yandex.net,yandex.com
+YandexMarket|.
+Googlebot|googlebot.com,google.com
+Google-Site-Verification|googlebot.com,google.com
+Mail.RU_Bot|mail.ru,smailru.net
+bingbot|search.msn.com
+AppEngine-Google|.googleusercontent.com
+vkShare|.vk.com
+facebookexternalhit|31.13.
+OdklBot|.odnoklassniki.ru
+MailRuConnect|.smailru.net
+Twitterbot|199.16.15
+TelegramBot|149.154.16
+AdsBot-Google|.
+facebookexternalhit|.
+facebookcatalog|.
+
+
+::EXCLUDE_REMOTE_ALERT_FILES::
+# Dont send notification to SG for these files
+/webanalyze/setup.php
+/index.php
+/administrator/index.php
+/administrator/components/com_joomlaupdate/restore.php
+/wp-signup.php
+/wp-login.php
+/xmlrpc.php
+/wp-cron.php
+/wp-comments-post.php
+/wp-load.php
+/wp-admin/admin.php
+/wp-admin/edit-comments.php
+/wp-admin/ms-admin.php
+/wp-admin/link.php
+/wp-admin/menu-header.php
+/wp-admin/ms-upgrade-network.php
+/wp-admin/upgrade-functions.php
+/wp-admin/options-reading.php
+/wp-admin/my-sites.php
+/wp-admin/nav-menus.php
+/wp-admin/edit-tags.php
+/wp-admin/admin-ajax.php
+/wp-admin/comment.php
+/wp-admin/plugin-install.php
+/wp-admin/revision.php
+/wp-admin/options-general.php
+/wp-admin/edit-link-form.php
+/wp-admin/ms-users.php
+/wp-admin/options-permalink.php
+/wp-admin/link-add.php
+/wp-admin/user-new.php
+/wp-admin/ms-sites.php
+/wp-admin/users.php
+/wp-admin/edit-form-comment.php
+/wp-admin/plugins.php
+/wp-admin/media-new.php
+/wp-admin/admin-post.php
+/wp-admin/options-media.php
+/wp-admin/options.php
+/wp-admin/link-manager.php
+/wp-admin/options-writing.php
+/wp-admin/media.php
+/wp-admin/export.php
+/wp-admin/admin-footer.php
+/wp-admin/admin-functions.php
+/wp-admin/post-new.php
+/wp-admin/menu.php
+/wp-admin/edit.php
+/wp-admin/ms-edit.php
+/wp-admin/load-scripts.php
+/wp-admin/options-discussion.php
+/wp-admin/freedoms.php
+/wp-admin/upload.php
+/wp-admin/options-head.php
+/wp-admin/about.php
+/wp-admin/upgrade.php
+/wp-admin/async-upload.php
+/wp-admin/moderation.php
+/wp-admin/index.php
+/wp-admin/custom-background.php
+/wp-admin/network.php
+/wp-admin/widgets.php
+/wp-admin/ms-options.php
+/wp-admin/media-upload.php
+/wp-admin/install-helper.php
+/wp-admin/admin-header.php
+/wp-admin/ms-themes.php
+/wp-admin/credits.php
+/wp-admin/install.php
+/wp-admin/setup-config.php
+/wp-admin/themes.php
+/wp-admin/import.php
+/wp-admin/link-parse-opml.php
+/wp-admin/edit-form-advanced.php
+/wp-admin/user-edit.php
+/wp-admin/tools.php
+/wp-admin/profile.php
+/wp-admin/custom-header.php
+/wp-admin/post.php
+/wp-admin/plugin-editor.php
+/wp-admin/load-styles.php
+/wp-admin/customize.php
+/wp-admin/ms-delete-site.php
+/wp-admin/term.php
+/wp-admin/theme-install.php
+/wp-admin/edit-tag-form.php
+/wp-admin/theme-editor.php
+/wp-admin/update-core.php
+/wp-admin/press-this.php
+/wp-admin/update.php
+/wp-includes/js/tinymce/wp-tinymce.php
+
+
+::BLOCK_FILE_HEX::
+# Blocks all uploaded files if hex value found in the first 200 bytes
+# Samples:
+# HEX_value
+# 504B03040A000000 - zip
+# 504B030414000200 - zip
+# 526172211A0700 - rar
+# 1F8B0800 - tgz
+546869732070726F6772616D2063616E6E6F742062652072756E20696E
+546869732070726F6772616D206D7573742062652072756E20756E646572
+D0CF11E0A1B11AE1000000
+
+::BLOCK_FILE_HEX_BY_EXTENSION::
+# Blocks all uploaded files if hex value found
+# Samples:
+# uploading_type|HEX_value,HEX_value
+.macroEnabled|*
+application/pdf|2F4A617661536372697074
+application/msword|776F72642F766261,2F76626150726F6A656374
+application/vnd.ms-word|776F72642F766261,2F76626150726F6A656374
+application/vnd.ms-excel|786C2F766261,2F76626150726F6A656374
+application/vnd.openxmlformats-officedocument.wordprocessingml.document|776F72642F766261,2F76626150726F6A656374
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet|786C2F766261,2F76626150726F6A656374
+
+
+::FILE_EXTENSIONS::
+# Analyze uploaded files by type SITEGUARDING_CHECK_UPLOADED_FILE_EXT
+# Samples:
+# uploading_type|HEX_value
+image/jpeg|457869660000
+image/png|89504E470D0A1A0A
+image/gif|4749463839611200
+application/zip|504B0304
+application/msword|57006F007200640044006F00630075006D0065006E007400
+application/vnd.ms-excel|57006F0072006B0062006F006F006B00
+application/vnd.openxmlformats-officedocument.wordprocessingml.document|776F72642F646F63756D656E742E786D6C
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet|786C2F776F726B7368656574732F
+application/pdf|255044462D
+
+
+::ALLOWED_FILE_TYPES::
+# If SITEGUARDING_BLOCK_UPLOADED_FILE = true only these file types will be allowed
+# Samples:
+# uploading_type
+image/jpeg
+image/png
+image/gif
+#application/zip
+#application/pdf

@@ -1,0 +1,71 @@
+stdClass Object
+(
+    [subscription] => stdClass Object
+        (
+            [name] => Capture Page Subscription
+            [paymentSchedule] => stdClass Object
+                (
+                    [interval] => stdClass Object
+                        (
+                            [length] => 30
+                            [unit] => days
+                        )
+
+                    [startDate] => 2019-08-07T00:00:00
+                    [totalOccurrences] => 9999
+                    [trialOccurrences] => 0
+                )
+
+            [amount] => 12
+            [trialAmount] => 0
+            [status] => canceled
+            [profile] => stdClass Object
+                (
+                    [paymentProfile] => stdClass Object
+                        (
+                            [customerPaymentProfileId] => 1621537854
+                            [payment] => stdClass Object
+                                (
+                                    [creditCard] => stdClass Object
+                                        (
+                                            [cardNumber] => XXXX9410
+                                            [expirationDate] => XXXX
+                                        )
+
+                                )
+
+                            [customerType] => individual
+                            [billTo] => stdClass Object
+                                (
+                                    [firstName] => Eric
+                                    [lastName] => Winder
+                                    [address] => 7668 Quinby Way
+                                    [city] => Sacramento
+                                    [zip] => 95823
+                                    [country] => United States
+                                )
+
+                        )
+
+                    [customerProfileId] => 1611574998
+                    [description] => Profile created by Subscription: 44848853
+                )
+
+        )
+
+    [messages] => stdClass Object
+        (
+            [resultCode] => Ok
+            [message] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [code] => I00001
+                            [text] => Successful.
+                        )
+
+                )
+
+        )
+
+)

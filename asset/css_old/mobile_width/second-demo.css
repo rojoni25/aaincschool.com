@@ -1,0 +1,352 @@
+/* ==================================================================
+Basic
+================================================================== */
+
+body {
+	background: #ffffff;
+	color: #555555;
+	padding:0px;
+	margin:0px;
+}
+
+/* ==================================================================
+Typography
+================================================================== */
+
+h1 {
+	color: #009CCF;
+	border-color: #ffffff;
+}
+
+h2 {
+	color: #ffffff;
+	border-color: #ffffff;
+}
+
+h4 {
+	color: #990000;
+}
+
+h5 {
+	color: #ffcc66;
+}
+
+h6 {
+	color: #a9a9a9;
+}
+
+/* ==================================================================
+Links
+================================================================== */
+
+a:hover, a:focus {
+	color: #555555;
+}
+
+a.button:hover {
+	border-color: #ecc117;
+}
+
+p a {
+	color: #990000;
+}
+
+/* ==================================================================
+Forms
+================================================================== */
+
+label {
+	color: #404040;
+}
+
+input, textarea, select, button {
+	background: #ffffff;
+	color: #242424;
+	border: 1px solid #e4e4e4;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+	border-color: #990000;
+}
+
+input[type="submit"], button, a.button {
+	color: #ffffff;
+	background-color: #af0909;
+	background: -webkit-linear-gradient(#af0909,#670101);
+	background: -moz-linear-gradient(#af0909,#670101);
+	background: -ms-linear-gradient(#af0909,#670101);
+	background: -o-linear-gradient(#af0909,#670101);
+	background: linear-gradient(#af0909,#670101);
+	box-shadow: inset 0px 1px 0px #bf4141, inset 0 -1px 2px #2f0000;
+}
+
+input[type="submit"]:hover, button:hover, a.button:hover {
+	color: #ffffff;
+	background-color: #a60707;
+	background: -webkit-linear-gradient(#a60707,#620101);
+	background: -moz-linear-gradient(#a60707,#620101);
+	background: -ms-linear-gradient(#a60707,#620101);
+	background: -o-linear-gradient(#a60707,#620101);
+	background: linear-gradient(#a60707,#620101);
+}
+
+/* ==================================================================
+Preloader
+================================================================== */
+
+.preloader {
+	color: #333333;
+}
+
+.preloader-spinner {
+	border: 2px solid #dbdbdb;
+	border-top: 2px solid #990000;
+}
+
+/* ==================================================================
+Intro
+================================================================== */
+
+.intro {
+	color: #ffffff;
+	background: url(http://placehold.it/2560x1440/666666/f1f1f1) top center no-repeat;
+}
+
+ul.intro-features li {
+	background: rgba(0,0,0,0.2);
+}
+
+.text-column {
+	padding-bottom: 125px;
+}
+
+.form-column {
+	margin-top: -590px;
+}
+
+/* ==================================================================
+Main Form
+================================================================== */
+
+.main-form {
+	background: #fbfaef;
+	background: -webkit-linear-gradient(#fbfaef,#deddd3);
+	background:    -moz-linear-gradient(#fbfaef,#deddd3);
+	background:         linear-gradient(#fbfaef,#deddd3);
+	background:     -ms-linear-gradient(#fbfaef,#deddd3);
+	background:      -o-linear-gradient(#fbfaef,#deddd3);
+	color: #696969;
+}
+
+.submit-arrow {
+	color: #ffffff;
+	background: url(../images/arrow-brown.png) top right no-repeat;
+}
+
+.submit-arrow span {
+	color: #ffcc66;
+}
+
+.disclaimer {
+	color: #a9a9a9;
+}
+
+/* ==================================================================
+Contact Form
+================================================================== */
+
+.contact-form {
+	border: 1px solid #cccccc;
+}
+
+/* ==================================================================
+Thanks Popup
+================================================================== */
+
+.thanks-popup {
+	background: #ffffff;
+}
+
+.thanks-popup .thanks-heading {
+	background: url(http://placehold.it/650x210/333333/444444) center center no-repeat;
+}
+
+.thanks-popup button.mfp-close:hover {
+	color: #ffffff;
+}
+
+/* ==================================================================
+Hero
+================================================================== */
+
+.hero h3 {
+	color: #000000;
+}
+
+.hero h3 span {
+	color: #990000;
+}
+
+/* ==================================================================
+Icon Block
+================================================================== */
+
+.icon-block i {
+	background: #ebe9d9;
+	color: #333333;
+}
+
+/* ==================================================================
+Pricing Table
+================================================================== */
+
+.pricing-table {
+	border: 1px solid #e3e3e3;
+}
+
+.pricing-table.featured {
+	border-color: #990000;
+}
+
+.pricing-table .table-title {
+	border-bottom: 1px solid #e3e3e3;
+}
+
+.pricing-table .table-price {
+	border-bottom: 1px solid #e3e3e3;
+	color: #000000;
+}
+
+.pricing-table ul.table-features li {
+	border-color: #e3e3e3;
+}
+
+.pricing-table ul.table-features li:nth-child(even) {
+	background: #f6f6f6;
+}
+
+/* ==================================================================
+Testimonial
+================================================================== */
+
+.testimonial-block {
+	border: 1px solid #e3e3e3;
+}
+
+.testimonial-block p.testimonial {
+	color: #000000;
+}
+
+.testimonial-block p.author span {
+	color: #990000;
+}
+
+/* ==================================================================
+Bottom CTA
+================================================================== */
+
+.bottom-cta {
+	background: url(http://placehold.it/2560x1440/666666/333333) center center no-repeat;
+}
+
+
+
+body {
+	font-family: sans-serif;
+	font-weight: normal;
+	margin: 10px;
+	color: #999;
+	background-color: #eee;
+}
+
+form {
+	margin: 40px 0;
+}
+
+div {
+	clear: both;
+	margin: 0 50px;
+}
+
+.label_lbl {
+  width: 200px;
+  border-radius: 3px;
+  border: 1px solid #D1D3D4
+}
+
+/* hide input */
+input.radio:empty {
+	margin-left: -999px;
+}
+
+/* style label */
+input.radio:empty ~ .label_lbl {
+	position: relative;
+	float: left;
+	line-height: 2.5em;
+	text-indent: 3.25em;
+	margin-top: 2em;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+input.radio:empty ~ .label_lbl:before {
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	content: '';
+	width: 2.5em;
+	background: #D1D3D4;
+	border-radius: 3px 0 0 3px;
+}
+
+/* toggle hover */
+input.radio:hover:not(:checked) ~ .label_lbl:before {
+	content:'\2714';
+	text-indent: .9em;
+	color: #C2C2C2;
+}
+
+input.radio:hover:not(:checked) ~ .label_lbl {
+	color: #888;
+}
+
+/* toggle on */
+input.radio:checked ~ .label_lbl:before {
+	content:'\2714';
+	text-indent: .9em;
+	color: #9CE2AE;
+	background-color: #4DCB6D;
+}
+
+input.radio:checked ~ .label_lbl {
+	color: #777;
+}
+
+/* radio focus */
+input.radio:focus ~ label_lbl:before {
+	box-shadow: 0 0 0 3px #999;
+}
+
+
+
+.txt_rdo
+{
+	float:left;
+	height : 30px;
+	width: 10px;
+	padding: 7px 10px;
+	margin: 0px 0px 5px;
+	line-height: 24px;
+	height: 40px;
+	box-sizing: border-box;
+	transition: all 0.3s ease 0s;
+	border-radius: 5px;
+}

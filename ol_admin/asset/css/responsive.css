@@ -1,0 +1,92 @@
+ /*==========  Non-Mobile First Method  ==========*/
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (max-width : 1200px) {
+        .board-widgets-content {
+            min-height: 50px;
+        }        
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (max-width : 992px) {
+        .nav-collapse{
+            clear:unset;
+        }
+        .nav-collapse .nav > li {
+            float: left;
+        }
+        .board-widgets-head h4 {
+            font-size: 9px;
+        }
+        .board-widgets-head {
+            position: relative;
+            min-height: 41px;
+        }
+        .board-widgets-content {
+            min-height: 70px;
+        }  
+        .widget-settings{
+            top:30px;
+        }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (max-width : 768px) {
+        .board-widgets-content .n-sources{
+            font-size: 12px;
+        }
+        .board-widgets-content .n-counter{
+            font-size: 20px;
+        }
+        .main-wrapper .row-fluid .span4{
+            width:100%;
+        }
+        .page-header{
+            padding-left: 20px;
+        }
+    }
+    @media only screen and (max-width : 600px) {
+        h3.page-header div.pull-right,
+        h3.page-header span.pull-right{
+            float: unset;
+        }
+        .top-banner {
+            margin-left: 45px !important;
+        }
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (max-width : 480px) {
+        .board-widgets-head h4 i{
+            display: block;
+        }
+        .board-widgets-head{
+            min-height: 60px;
+        }
+        .board-widgets-botttom a{
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis; 
+        }
+        .board-widgets-botttom a i{
+            right:-12px;
+        }
+        .main-wrapper{
+            padding: 0;
+        }
+        .main-wrapper .container-fluid{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .page-header{
+            padding-left: 45px;
+            padding-top: 12px;
+        }
+    }
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (max-width : 400px) {
+        .email-to-all{
+            margin-top: 15px;
+        }
+    }

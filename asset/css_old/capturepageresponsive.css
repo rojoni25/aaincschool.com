@@ -1,0 +1,131 @@
+ /*==========  Non-Mobile First Method  ==========*/
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (max-width : 1200px) {
+        .page-10 h3{
+            color: red;
+        }
+        .page-9 .videoinner {
+		    width: 456px;
+		    height: 281px;
+		}
+		.page-9 .bodyvideo {
+		    width: 510px;
+		    height: 440px;
+		}		
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (max-width : 992px) {
+        .page-10 h3{
+            color: yellow;
+        }
+        .page-9 .bodyvideo {
+		    width: 407px;
+		    height: 440px;
+		}
+        .page-9 .videoinner {
+		    width: 362px;
+		    height: 224px;
+		    margin-left: 22px;
+    		margin-top: 76px;
+		}
+        
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (max-width : 768px) {
+
+        .page-10 h3{
+            color: pink;
+        }
+        .page-10 .formmain,
+        .page-9 .formmain{
+        	width: 225px;
+        }
+        .page-9 .bodyvideo {
+		    width: 335px;
+		    height: 440px;
+		}
+        .page-9 .videoinner {
+		    width: 299px;
+		    height: 189px;
+		    margin-left: 18px;
+		    margin-top: 99px;
+		}
+		.page-10 .bodyvideo {
+		    width: 335px;
+		    height: 235px;
+		    margin-top: 0px;
+		    margin-left: -67px;
+		}
+		.page-10 .videoinner {
+		    margin-left: 45px;
+		    margin-top: 18px;
+		    height: 166px;
+		    width: 250px;
+		}
+    }
+    @media only screen and (max-width : 600px) {
+       
+        .page-10 h3{
+            color: red;
+        }
+        .page-9 .bodyvideo,
+        .page-9 .formmain,
+        .page-2 .formmain {
+		    position: unset;
+		    margin: 0 auto;
+		}
+        .page-9 .formmain{
+        	min-height: unset;
+        	height: auto;
+        }
+        .page-9 .bodyvideo {
+		    width: 235px;
+		    height: 203px;
+		}
+		.page-9 .videoinner {
+		    width: 211px;
+		    height: 148px;
+		    margin-left: 12px;
+		    margin-top: 6px;
+		    padding-top: 18px;
+		}
+        .page-10 .formmain{
+    	    position: unset;
+			width: 225px;
+			margin: 0 auto;
+			min-height: unset;
+			height: auto;
+        }
+        .page-10 .bodyvideo {
+		    position: unset;
+		    margin: auto;
+		    width: 255px;
+		    height: 170px;
+		}
+		.page-10 .videoinner {
+		    padding-top: 10px;
+		    margin-left: 35px;
+		    margin-top: 10px;
+		    height: 136px;
+		    width: 189px;
+		}
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (max-width : 480px) {
+       .page-2 .formmain,
+       .page-1 .formmain{
+       	width:300px;
+       }
+       .page-3 .formmain {
+       	padding: 10px;
+       }
+    }
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (max-width : 400px) {
+        
+    }

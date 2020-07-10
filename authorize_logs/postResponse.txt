@@ -1,0 +1,63 @@
+stdClass Object
+(
+    [transaction] => stdClass Object
+        (
+            [transId] => 62007819831
+            [submitTimeUTC] => 2019-11-05T01:12:03.567Z
+            [submitTimeLocal] => 2019-11-04T17:12:03.567
+            [transactionType] => authCaptureTransaction
+            [transactionStatus] => capturedPendingSettlement
+            [responseCode] => 1
+            [responseReasonCode] => 1
+            [responseReasonDescription] => Approval
+            [authCode] => 329258
+            [AVSResponse] => Y
+            [cardCodeResponse] => M
+            [authAmount] => 23
+            [settleAmount] => 23
+            [taxExempt] => 
+            [payment] => stdClass Object
+                (
+                    [creditCard] => stdClass Object
+                        (
+                            [cardNumber] => XXXX4767
+                            [expirationDate] => XXXX
+                            [cardType] => Visa
+                        )
+
+                )
+
+            [billTo] => stdClass Object
+                (
+                    [firstName] => David
+                    [lastName] => Leroy
+                    [address] => 102 Mcgrady Drive
+                    [city] => Ladson
+                    [zip] => 29456
+                    [country] => United States
+                )
+
+            [recurringBilling] => 
+            [customerIP] => 192.185.81.193
+            [product] => Card Not Present
+            [marketType] => eCommerce
+        )
+
+    [clientId] => sdk-php-2.0.0-ALPHA
+    [transrefId] => ref1572916321
+    [messages] => stdClass Object
+        (
+            [resultCode] => Ok
+            [message] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [code] => I00001
+                            [text] => Successful.
+                        )
+
+                )
+
+        )
+
+)
